@@ -19,7 +19,7 @@ var (
 
 func main() {
 	Board := [9][9]int{{1, 0, 8, 4, 0, 0, 9, 0, 0}, {4, 0, 6, 0, 0, 0, 0, 0, 0}, {0, 5, 0, 0, 8, 0, 7, 0, 0}, {0, 9, 0, 0, 3, 0, 0, 0, 2}, {0, 0, 0, 0, 4, 0, 0, 0, 6}, {2, 6, 0, 5, 0, 0, 0, 0, 1}, {0, 0, 0, 0, 0, 0, 0, 0, 0}, {0, 8, 0, 0, 0, 1, 0, 0, 9}, {0, 2, 0, 0, 5, 0, 3, 0, 0}}
-	fmt.Println(Board)
+	printBoard(Board)
 	SBoard, _ := json.Marshal(Board)
 	flag.Parse()
 	conn, err := grpc.Dial(*addr, grpc.WithTransportCredentials(insecure.NewCredentials()))

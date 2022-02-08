@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "Sudoku_Solver/Server/app/micro";
+
+package sudoku_solver;
+
+service Solver {
+    rpc SolveSudoku (SudokuRequest) returns (SudokuReply) {}
+}
+
+message SudokuRequest {
+    bytes sudoku = 1;
+}
+
+message SudokuReply {
+    string status = 1;
+    bytes sudoku = 2;
+}
